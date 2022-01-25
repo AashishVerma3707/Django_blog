@@ -1,0 +1,12 @@
+{%extends "base.html"%}
+{%block content%}
+{%load static%}
+<h1>creating new articles</h1>
+<form class="site-form" name="create_form" method="post" action="{%url 'blog:blogcreate'%}"
+      enctype="multipart/form-data" >
+    {%csrf_token%}
+    {{forms}}
+    <input type="submit" value="Add_Article">
+</form>
+<script src="{%static 'slug.js'%}" ></script>
+{%endblock%}

@@ -1,0 +1,12 @@
+{%extends "base.html"%}
+{%block content%}
+<h1>Log-in</h1>
+<form name="site-form" action="{%url 'Accounts:Login_page'%}" method="post" >
+     {%csrf_token%}
+    {{form}}
+    {%if request.GET.next%}
+    <input type="hidden" name="next" value="{{request.GET.next}}">
+    {%endif%}
+    <input type="submit" value="Log-in">
+</form>
+{%endblock%}

@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1>Article entries are below</h1>
+<div class="articles">
+    {%for i in article%}
+   <div class="article">
+    <h2><a href="{%url 'blog:blogdetails' slug=i.slug %}" >{{i.title}} </a></h2>
+
+    <p>{{i.desc|slice:":50"}}
+    {%if i.desc|slice:"50:"%}...
+        {%else%}
+        .
+        {%endif%}
+    </p>
+    <h6>{{i.date}}</h6>
+       <p class="author">{{i.input_by.username}}</p>
+      </div>
+    {%endfor%}
+</div>
+{%endblock%}
+
