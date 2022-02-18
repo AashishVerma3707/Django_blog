@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block content%}
+<style>
+.update-form{
+     margin-top:60px;
+    border: 1px solid #00dba0;
+    padding:20px;
+}
+ .update-form input, .update-form textarea, .update-form checkbox, .update-form file{
+    display: block;
+    margin:20px 0 0 0;
+    padding: 10px;
+}
+</style>
+<div class="update-form">
+    <form action="{%url 'blog:Update_blog' pk=pk %}" method="post">
+        {%csrf_token%}
+{{form}}
+        <button type="submit">Update confirm</button>
+        </form>
+    </div>
+{%endblock%}

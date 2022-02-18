@@ -25,7 +25,7 @@ a, a:hover, a:visited{
 .wrapper img{
     max-width:60%;
 }
-div.wrapper h1{
+div.wrapper h1,p{
     text-align:center;
     margin: 100px auto;
     font-size: 2.4em;
@@ -78,6 +78,7 @@ nav button{
 
 .article_details .article img{
     max-width: 100%;
+    max-height: 30em;
 }
 .article_details .article h2{
     text-align: center;

@@ -26,5 +26,23 @@ def func2(request):
 
 
 def details(request,slug):
+    print("fffffffffffffffffffffffffff")
     Got_article=Article.objects.get(slug=slug)
     return render(request,"index2.html",{"Got_article":Got_article})
+
+def Update_blog(request,pk):
+    b_log=Article.objects.get(id=pk)
+    form=Model_forms.Create_article(instance=b_log)
+    if request.method=="POST":
+        form=Model_forms.Create_article(request.POST, instance=b_log)
+        if form.is_valid():
+            form.save()
+            return redirect('/blog/list')
+    return render(request , "Update_blog.html" , {"form":form,"pk":pk})
+def Delete_blog(request , pk):
+    b_log=Article.objects.get(id=pk)
+    if request.method=="POST":
+        b_log.delete()
+        return redirect('/blog/list')
+    return render(request, "Delete_blog.html" , {"b_log":b_log,"pk":pk})
+

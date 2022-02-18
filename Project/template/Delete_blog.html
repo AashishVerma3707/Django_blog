@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block content%}
+Are you sure to delete {{b_log.title}}
+<style>
+    .x{display:inline-block}
+</style>
+<div class="x">
+
+<form method="post" action="{%url 'blog:Delete_blog' pk=pk %}" >
+    {%csrf_token%}
+    <input type="submit" value="Yes">
+</form>
+</div>
+    <div class="x">
+<a href="{%url 'blog:blogdetails' b_log.slug %}"><button>No</button></a>
+    </div>
+{%endblock%}

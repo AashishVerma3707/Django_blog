@@ -1,6 +1,13 @@
 {%extends 'base.html'%}
 {%block content%}
 <h1>Article entries are below</h1>
+{%if user.is_authenticated%}
+{%else%}
+<p style=" text-align:center;
+    margin: 20px;
+    font-size: 1em;">please login to add your article</p>
+{%endif%}
+
 <div class="articles">
     {%for i in article%}
    <div class="article">
