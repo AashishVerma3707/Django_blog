@@ -26,7 +26,6 @@ def func2(request):
 
 
 def details(request,slug):
-    print("fffffffffffffffffffffffffff")
     Got_article=Article.objects.get(slug=slug)
     return render(request,"index2.html",{"Got_article":Got_article})
 
